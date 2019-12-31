@@ -5,10 +5,12 @@ import Layout from '../components/Layout';
 import SEO from '../components/seo';
 
 import * as S from '../components/Post/styled';
+import RecommendedPosts from '../components/RecommendedPosts';
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, pageContext }) => {
 	const post = data.markdownRemark;
 	const postData = post.frontmatter;
+	const { nextPost, previousPost } = pageContext;
 
 	return(
 		<Layout>
@@ -31,6 +33,11 @@ const BlogPost = ({ data }) => {
 			<S.MainContent>
 				<div dangerouslySetInnerHTML={{ __html: post.html }}></div>
 			</S.MainContent>
+
+			<RecommendedPosts
+				next={nextPost}
+				previous={previousPost}
+			/>
 
 		</Layout>
 	);

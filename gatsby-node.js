@@ -50,18 +50,40 @@ exports.createPages = ({ graphql, actions }) => {
               slug
             }
           }
+          next {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
+          }
+          previous {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
+          }
         }
       }
     }
 	`).then(result => {
     const posts = result.data.allMarkdownRemark.edges;
 
-		posts.forEach(({ node }) => {
+		posts.forEach(({ node, next, previous }) => {
+      const { slug } = node.fields;
+
       createPage({
-        path: node.fields.slug,
+        path: slug,
         component: path.resolve('./src/templates/blog-post.js'),
         context: {
-          slug: node.fields.slug
+          // Data passed to context is available
+          // In page queries as GraphQL variables
+          slug,
+          previousPost: next,
+          nextPost: previous
         }
       });
     });
