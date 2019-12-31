@@ -124,9 +124,15 @@ export const MainContent = styled.section`
 
 	.gatsby-resp-image-image {
 		box-shadow: none!important;
+		color: transparent;
 		transition: opacity .2s;
 
 		&.lazyload { opacity: 0; }
+
+		&.lazyloaded {
+			opacity: 1;
+			z-index: 3;
+		}
 	}
 
 	.gatsby-highlight { padding: 0 1.6rem 1.6rem 1.6rem; }
