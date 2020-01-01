@@ -17,26 +17,32 @@ const BlogList = props => {
 	return(
 		<Layout>
 			<SEO title="Home" />
-			{
-				postList.map(({
-					node: {
-						frontmatter: { background, category, date, description, title },
-						timeToRead,
-						fields: { slug }
+			{postList.map(({
+				node: {
+					frontmatter: {
+						background,
+						category,
+						date,
+						description,
+						title
 					},
-				}, idx) => (
-					<PostItem
-						key={idx}
-						slug={slug}
-						background={background}
-						category={category}
-						date={date}
-						timeToRead={timeToRead}
-						title={title}
-						description={description}
-					/>
-				))
-			}
+					timeToRead,
+					fields: {
+						slug
+					}
+				}
+			}, idx) => (
+				<PostItem
+					key={idx}
+					slug={slug}
+					background={background}
+					category={category}
+					date={date}
+					timeToRead={timeToRead}
+					title={title}
+					description={description}
+				/>
+			))}
 
 			<Pagination
 				isFirstPage={isFirstPage}

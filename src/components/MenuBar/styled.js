@@ -39,5 +39,3 @@ export const MenuBarItem = styled.span`
 		width: ${iconSize};
 	}
 `;
-
-

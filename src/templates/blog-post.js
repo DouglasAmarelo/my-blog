@@ -3,9 +3,10 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
+import RecommendedPosts from '../components/RecommendedPosts';
+import Comments from '../components/Comments';
 
 import * as S from '../components/Post/styled';
-import RecommendedPosts from '../components/RecommendedPosts';
 
 const BlogPost = ({ data, pageContext }) => {
 	const post = data.markdownRemark;
@@ -39,6 +40,10 @@ const BlogPost = ({ data, pageContext }) => {
 				previous={previousPost}
 			/>
 
+			<Comments
+				url={post.fields.slug}
+				title={postData.title}
+			/>
 		</Layout>
 	);
 };
@@ -46,6 +51,9 @@ const BlogPost = ({ data, pageContext }) => {
 export const query = graphql`
 	query Post($slug: String!) {
 		markdownRemark(fields: {slug: {eq: $slug}}) {
+			fields {
+				slug
+			}
 			frontmatter {
 				title,
 				description,

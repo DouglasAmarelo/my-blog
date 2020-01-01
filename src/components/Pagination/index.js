@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import * as S from './styled';
 
@@ -26,12 +26,12 @@ const Pagination = ({ isFirstPage, isLastPage, currentPage, numPages, prevPage, 
 };
 
 Pagination.propTypes = {
-	isFirstPage: propTypes.bool.isRequired,
-	isLastPage: propTypes.bool.isRequired,
-	currentPage: propTypes.number.isRequired,
-	numPages: propTypes.number.isRequired,
-	prevPage: propTypes.string,
-	nextPage: propTypes.string,
+	isFirstPage: PropTypes.bool.isRequired,
+	isLastPage : PropTypes.bool.isRequired,
+	currentPage: PropTypes.number.isRequired,
+	numPages   : PropTypes.number.isRequired,
+	prevPage   : PropTypes.string,
+	nextPage   : PropTypes.string,
 };
 
 export default Pagination;

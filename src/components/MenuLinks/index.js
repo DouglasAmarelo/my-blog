@@ -18,5 +18,4 @@ const MenuLinks = () => (
 	</S.MenuLinksWrapper>
 );
 
-
 export default MenuLinks;

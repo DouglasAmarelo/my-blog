@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+
 import Avatar from '../Avatar';
 
 import * as S from './styled';
@@ -33,11 +34,16 @@ const Profile = () => {
 
 				<S.ProfileAuthor>
 					{title}
-					<S.ProfilePosition>{position}</S.ProfilePosition>
+
+					<S.ProfilePosition>
+						{position}
+					</S.ProfilePosition>
 				</S.ProfileAuthor>
 			</S.ProfileLink>
 
-			<S.ProfileDescription>{description}</S.ProfileDescription>
+			<S.ProfileDescription>
+				{description}
+			</S.ProfileDescription>
 		</S.ProfileWrapper>
 	);
 };

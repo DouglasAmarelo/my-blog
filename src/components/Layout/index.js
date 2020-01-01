@@ -14,7 +14,9 @@ const Layout = ({ children }) => {
 
 			<Sidebar />
 
-			<S.LayoutMain>{children}</S.LayoutMain>
+			<S.LayoutMain>
+				{children}
+			</S.LayoutMain>
 
 			<MenuBar />
 		</S.LayoutWrapper>
@@ -23,6 +25,6 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
 	children: PropTypes.node.isRequired,
-}
+};
 
 export default Layout;

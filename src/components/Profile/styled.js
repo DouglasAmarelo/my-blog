@@ -12,9 +12,7 @@ export const ProfileLink = styled(Link)`
 	text-decoration: none;
 	transition: color .5s;
 
-	&:hover {
-		color: #1fa1f2;
-	}
+	&:hover { color: #1fa1f2; }
 `;
 
 export const ProfileAuthor = styled.h1`
