@@ -11,7 +11,7 @@ export const MenuLinksList = styled.ul`
 export const MenuLinksItem = styled.li`
 	padding: .5em 0;
 
-	.active { color: #1fa1f2; }
+	.active { color: var(--highlight); }
 `;
 
 export const MenuLinksLink = styled(Link)`
@@ -19,5 +19,5 @@ export const MenuLinksLink = styled(Link)`
 	text-decoration: none;
 	transition: color .5s;
 
-	&:hover { color: #1fa1f2; }
+	&:hover { color: var(--highlight); }
 `;

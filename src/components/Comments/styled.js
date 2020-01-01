@@ -9,12 +9,12 @@ export const CommentsWrapper = styled.section`
 	iframe[src*="ads-iframe"] { display: none; }
 
 	#disqus_thread {
-		a { color: #1fa1f2 !important; }
+		a { color: var(--highlight) !important; }
 	}
 `;
 
 export const CommentsTitle = styled.h2`
-	color: #fff;
+	color: var(--postColor);
 	font-size: 2.1rem;
 	font-weight: 700;
 	padding-bottom: 2rem;

@@ -5,8 +5,8 @@ const iconSize = '20px';
 
 export const MenuBarWrapper = styled.aside`
 	align-items: center;
-	background-color: #192734;
-	border-left: 1px solid #38444d;
+	background-color: var(--mediumBackground);
+	border-left: 1px solid var(--borders);
 	display: flex;
 	flex-direction: column;
 	height: 100vh;

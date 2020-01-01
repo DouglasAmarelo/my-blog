@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 export const PaginationWrapper = styled.section`
 	align-items: center;
-	border-top: 1px solid #38444d;
+	border-top: 1px solid var(--borders);
 	color: #8899ac;
 	display: flex;
 	padding: 1.5rem 3rem;
@@ -11,9 +11,9 @@ export const PaginationWrapper = styled.section`
 `;
 
 export const PaginationLink = styled(Link)`
-		color: #8899a6;
+		color: var(--texts);
 		text-decoration: none;
 		transition: color .5s;
 
-		&:hover { color: #1fa1f2; }
+		&:hover { color: var(--highlight); }
 `;
