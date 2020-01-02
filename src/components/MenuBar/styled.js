@@ -27,14 +27,22 @@ export const MenuBarLink = styled(Link)`
 `;
 
 export const MenuBarItem = styled.span`
-	color: #8899ac;
+	color: var(--texts);
 	cursor: pointer;
 	display: block;
 	height: 3.75rem;
 	padding: 1.1rem;
+	position: relative;
+
+	&:hover { color: var(--highlight); }
+
+	&.light {
+		color: #d4d400;
+
+		&:hover { color: #e2e240; }
+	}
 
 	svg {
-		fill: #bbb;
 		height: ${iconSize};
 		width: ${iconSize};
 	}
