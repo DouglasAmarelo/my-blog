@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 import { Link } from 'gatsby';
 
 const iconSize = '20px';
@@ -7,23 +8,41 @@ export const MenuBarWrapper = styled.aside`
 	align-items: center;
 	background-color: var(--mediumBackground);
 	border-left: 1px solid var(--borders);
+	bottom: 0;
 	display: flex;
-	flex-direction: column;
-	height: 100vh;
 	justify-content: space-between;
-	padding: 0.8rem 0;
 	position: fixed;
 	right: 0;
-	width: 3.75rem;
+	transition: background .5s;
+	width: 100%;
+	z-index: 5;
+
+	${media.greaterThan('large')`
+		flex-direction: column;
+		height: 100vh;
+		padding: 0.8rem 0;
+		max-width: 3.75rem;
+	`};
+
+	${media.lessThan('large')`
+		border-top: 1px solid var(--borders);
+	`};
 `;
 
 export const MenuBarGroup = styled.div`
 	display: flex;
-	flex-direction: column;
+
+	${media.greaterThan('large')`
+		flex-direction: column;
+	`};
 `;
 
 export const MenuBarLink = styled(Link)`
 	display: block;
+
+	&.active {
+		span { color: var(--highlight); }
+	}
 `;
 
 export const MenuBarItem = styled.span`
@@ -33,6 +52,12 @@ export const MenuBarItem = styled.span`
 	height: 3.75rem;
 	padding: 1.1rem;
 	position: relative;
+
+	${media.lessThan('large')`
+		height: 3.2rem;
+		padding: .9rem;
+		width: 3.2rem;
+	`};
 
 	&:hover { color: var(--highlight); }
 

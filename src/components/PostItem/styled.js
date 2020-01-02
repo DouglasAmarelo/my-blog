@@ -1,10 +1,15 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 import { Link } from 'gatsby';
 
 export const PostItemLink = styled(Link)`
 	color: var(--texts);
 	display: flex;
 	text-decoration: none;
+
+	${media.lessThan('large')`
+		align-items: flex-start;
+	`};
 
 	body#grid & { background-color: var(--background); }
 
@@ -18,26 +23,43 @@ export const PostItemWrapper = styled.section`
 	padding: 2rem 3rem;
 	width: 100%;
 
+	${media.lessThan('large')`
+		padding: 2rem 1.5rem;
+	`};
+
 	body#grid & {
 		border: none;
 		flex-direction: column;
 		justify-content: center;
 		padding: 2rem 1rem;
+
+		${media.lessThan('large')`
+			align-items: flex-start;
+		`};
 	}
 `;
 
 export const PostItemTag = styled.div`
 	align-items: center;
 	background-color: ${({ background }) => background ? background : '#000'};
-	border-radius: 50%;
 	color: var(--postColor);
 	display: flex;
 	font-size: 1.3rem;
 	font-weight: 700;
 	justify-content: center;
-	min-height: 90px;
-	min-width: 90px;
 	text-transform: uppercase;
+
+	${media.greaterThan('large')`
+		border-radius: 50%;
+		min-height: 90px;
+		min-width: 90px;
+	`};
+
+	${media.lessThan('large')`
+		font-size: 1rem;
+		min-width: 80px;
+		padding: .2rem .5rem;
+	`};
 
 	body#grid & { margin-bottom: 1.5rem; }
 `;
@@ -46,6 +68,12 @@ export const PostItemInfo = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin-left: 1.5rem;
+
+	body#grid & {
+		${media.lessThan('large')`
+			margin-left: 0;
+		`};
+	}
 `;
 
 export const PostItemDate = styled.time`

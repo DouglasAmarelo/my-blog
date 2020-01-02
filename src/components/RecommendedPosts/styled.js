@@ -1,11 +1,17 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 import { Link } from 'gatsby';
 
 export const RecommendedWrapper = styled.section`
+	background: var(--mediumBackground);
 	border-bottom: 1px solid var(--borders);
 	border-top: 1px solid var(--borders);
-	background: var(--mediumBackground);
 	display: flex;
+	transition: background .5s;
+
+	${media.lessThan('large')`
+		font-size: .85rem;
+	`};
 `;
 
 export const RecommendedLink = styled(Link)`
