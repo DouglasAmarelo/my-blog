@@ -1,5 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
+import getThemeColor from '../../utils/getThemeColor';
+
 import { LeftArrowAlt as PrevPage } from 'styled-icons/boxicons-regular/LeftArrowAlt';
 import { RightArrowAlt as Nextpage } from 'styled-icons/boxicons-regular/RightArrowAlt';
 
@@ -13,7 +16,7 @@ const Pagination = ({ isFirstPage, isLastPage, currentPage, numPages, prevPage, 
 					to={prevPage}
 					cover
 					direction="left"
-					bg="#16202c"
+					bg={getThemeColor()}
 				>
 					<PrevPage />
 					página anterior
@@ -29,7 +32,7 @@ const Pagination = ({ isFirstPage, isLastPage, currentPage, numPages, prevPage, 
 					to={nextPage}
 					cover
 					direction="right"
-					bg="#16202c"
+					bg={getThemeColor()}
 				>
 					próxima página
 					<Nextpage />

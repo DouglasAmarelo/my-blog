@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import getThemeColor from '../../utils/getThemeColor';
+
 import {
 	Home,
 	Search,
@@ -34,7 +36,7 @@ const MenuBar = () => {
 					title="Voltar para a Home"
 					cover
 					direction="right"
-					bg="#16202c"
+					bg={getThemeColor()}
 					duration={.5}
 				>
 					<S.MenuBarItem>
@@ -47,7 +49,7 @@ const MenuBar = () => {
 					title="Pesquisar"
 					cover
 					direction="right"
-					bg="#16202c"
+					bg={getThemeColor()}
 					duration={.5}
 				>
 					<S.MenuBarItem>

@@ -6,6 +6,7 @@ import SEO from '../components/seo';
 import RecommendedPosts from '../components/RecommendedPosts';
 import Comments from '../components/Comments';
 
+import { MainContent, MainWrapper } from '../components/styles/main';
 import * as S from '../components/Post/styled';
 
 const BlogPost = ({ data, pageContext }) => {
@@ -17,7 +18,7 @@ const BlogPost = ({ data, pageContext }) => {
 		<Layout>
 			<SEO title={postData.title} />
 
-			<S.PostWrapper>
+			<MainWrapper>
 				<S.PostHeader>
 					<S.PostDate>
 						{postData.date} - {post.timeToRead} min de leitura
@@ -32,10 +33,10 @@ const BlogPost = ({ data, pageContext }) => {
 					</S.PostDescription>
 				</S.PostHeader>
 
-				<S.MainContent>
+				<MainContent>
 					<div dangerouslySetInnerHTML={{ __html: post.html }}></div>
-				</S.MainContent>
-			</S.PostWrapper>
+				</MainContent>
+			</MainWrapper>
 
 			<RecommendedPosts
 				next={nextPost}
