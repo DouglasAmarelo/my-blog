@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { LeftArrowAlt as PrevPage } from 'styled-icons/boxicons-regular/LeftArrowAlt';
+import { RightArrowAlt as Nextpage } from 'styled-icons/boxicons-regular/RightArrowAlt';
 
 import * as S from './styled';
 
@@ -7,7 +9,13 @@ const Pagination = ({ isFirstPage, isLastPage, currentPage, numPages, prevPage, 
 	return(
 		<S.PaginationWrapper>
 			{!isFirstPage && (
-				<S.PaginationLink to={prevPage}>
+				<S.PaginationLink
+					to={prevPage}
+					cover
+					direction="left"
+					bg="#16202c"
+				>
+					<PrevPage />
 					página anterior
 				</S.PaginationLink>
 			)}
@@ -17,8 +25,14 @@ const Pagination = ({ isFirstPage, isLastPage, currentPage, numPages, prevPage, 
 			</p>
 
 			{!isLastPage && (
-				<S.PaginationLink to={nextPage}>
+				<S.PaginationLink
+					to={nextPage}
+					cover
+					direction="right"
+					bg="#16202c"
+				>
 					próxima página
+					<Nextpage />
 				</S.PaginationLink>
 			)}
 		</S.PaginationWrapper>

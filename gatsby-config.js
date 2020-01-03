@@ -11,6 +11,7 @@ module.exports = {
 	plugins: [
 		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-react-helmet`,
+		`gatsby-plugin-transition-link`,
 		// Needs to be the first one to work with gatsby-remark-images
 		{
 			resolve: `gatsby-source-filesystem`,
