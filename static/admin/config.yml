@@ -1,0 +1,51 @@
+backend:
+  name: github
+  repo: DouglasAmarelo/my-blog
+  branch: master # Branch to update (optional; defaults to master)
+  site_domain: https://douglasamarelo-gatsbyblog.netlify.com/
+
+publish_mode: editorial_workflow
+
+media_folder: "static/assets/img" # Media files will be stored in the repo under images/uploads
+public_folder: "/assets/img"
+
+collections:
+  - name: "posts" # Used in routes, e.g., /admin/collections/blog
+    label: "Posts" # Used in the UI
+    folder: "posts" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Image", name: "thumbnail", widget: "image" }
+      - {
+          label: "Category",
+          name: "category",
+          widget: "select",
+          options: [
+            "Jekyll",
+            "CSS",
+            "JS",
+            "HTML",
+            "SVG",
+            "Dev",
+            "Misc"
+          ]
+        }
+      - {
+          label: "Background",
+          name: "background",
+          widget: "select",
+          options: [
+            { label: "Jekyll", value: "#b31917" },
+            { label: "CSS", value: "#2da0c3" },
+            { label: "JS", value: "#d6b132" },
+            { label: "HTML", value: "#eb7728" },
+            { label: "SVG", value: "#7d669e" },
+            { label: "Dev", value: "#637a91" },
+            { label: "Misc", value: "#7aab13" }
+          ]
+        }
