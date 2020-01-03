@@ -7,11 +7,14 @@ module.exports = {
 		position: `Front-end developer`,
 		description: `A blog about front-end development and other cool stuff.`,
 		author: `@douglasamarelo`,
+		// siteURL: `https://douglasamarelo.com`
+		siteUrl: `http://localhost:8000`
 	},
 	plugins: [
 		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-transition-link`,
+		`gatsby-plugin-sitemap`,
 		// Needs to be the first one to work with gatsby-remark-images
 		{
 			resolve: `gatsby-source-filesystem`,
